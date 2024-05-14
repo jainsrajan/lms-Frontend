@@ -90,8 +90,8 @@ controlsList="nodownload"
 
         <p>Lectures list</p>
         
-        {role==='ADMIN' &&(
-            <button onClick={()=> navigate("/course/addlecture" , {state:{...state}})} className="btn-primary px-2 py-1 rounded-md font-semibold text-sm">
+        {role === "ADMIN" && (
+            <button onClick={() => navigate("/course/newlecture" , {state:{...state}})} className="btn-secondary px-2 py-1 rounded-md font-semibold text-sm">
                 Add new lecture
             </button>
         )}

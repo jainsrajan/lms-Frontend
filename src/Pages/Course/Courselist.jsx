@@ -13,7 +13,7 @@ const {courseData} = useSelector((state)=>state.course)
 
 async function loadCourses(){
 
-   const response =  await dispatch(getAllcourses())
+     await dispatch(getAllcourses())
 
 }
 console.log("the coursedata is",courseData)

@@ -30,10 +30,9 @@ export const addCourseLectures = createAsyncThunk('/course/lecture/add' , async(
     try {
         const formdata = new FormData()
 
-        formdata.append("lecture" , data.lecture)
         formdata.append("title" , data.title);
         formdata.append("description" , data.description) 
-
+        formdata.append("lecture" , data.lecture)
         
         const response = axiosInstance.post(`/courses/${data.id}` , formdata)
         toast.promise(response , {
@@ -42,7 +41,9 @@ export const addCourseLectures = createAsyncThunk('/course/lecture/add' , async(
             error:"Failed to load lecture"
         })
 
-        return (await res).data
+        console.log("The response of the add lecture data is" , (await response).data)
+
+        return (await response).data
 
     } catch (error) {
         toast.error(error?.response?.data?.message)

@@ -59,7 +59,7 @@ const courseSlice = createSlice({
     extraReducers:(builder)=>{
         builder
         .addCase(getAllcourses.fulfilled, (state , action)=>{
-            console.log("The action proprety is ",action)
+            console.log("The action proprety is ", action)
             if(action.payload)
             {
               

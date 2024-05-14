@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Footer from "../Components/Footer"
+// import Footer from "../Components/Footer"
 import HomeLayout from "../Layouts/HomeLayout"
 import { BsPersonCircle } from "react-icons/bs"
 import { Link, useNavigate } from "react-router-dom"

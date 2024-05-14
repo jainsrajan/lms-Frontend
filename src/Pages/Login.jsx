@@ -35,7 +35,7 @@ function Login()
 
     async function Onlogin(event)
     {
-
+console.log("srajan")
         event.preventDefault()
 
         if(!loginData.email || !loginData.password)
