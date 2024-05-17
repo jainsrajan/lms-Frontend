@@ -41,7 +41,7 @@ export const addCourseLectures = createAsyncThunk('/course/lecture/add' , async(
             error:"Failed to load lecture"
         })
 
-        console.log("The response of the add lecture data is" , (await response).data)
+        // console.log("The response of the add lecture data is" , (await response).data)
 
         return (await response).data
 

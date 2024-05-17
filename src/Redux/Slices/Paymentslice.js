@@ -1,27 +1,24 @@
-import { asyncThunkCreator, createSlice } from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import toast from "react-hot-toast"
 import axiosInstance from "../../Helpers/axiosInstance"
 
 const initialState={
 
-    key :"",
+    key: '',
     subscription_id:"",
-    isPaymentVerified : "",
+    isPaymentVerified : false,
     allPayments:{},
     finalMonths:{},
     monthlySalesRecord:[]
 }
 
-
-export const getRazorpayId = cerateAsyncThunk("/razorpay/getId" , async()=>{
+export const getRazorpayId = createAsyncThunk("/razorpay/getId" , async()=>{
 
     try
     {
-        const response = await axiosInstance.get("/payments/razorpay-key")
-
-
-         return response.data
-
+        const response =  await axiosInstance.get("/payments/razorpay-key")
+        //  console.log("The getrazorpayAPI data is----- ",response.data)
+         return  response.data
     }
 
     catch(error)
@@ -31,37 +28,31 @@ export const getRazorpayId = cerateAsyncThunk("/razorpay/getId" , async()=>{
 })
 
 
-export const purchaseCourseBundle = cerateAsyncThunk("/purchaceCourse" , async()=>{
+export const purchaseCourseBundle = createAsyncThunk("/purchaceCourse" , async()=>{
 
     try
     {
-        const response = await axiosInstance.get("/payments/subscribe")
-
-
+        const response = await axiosInstance.post("/payments/subscribe")
+        // console.log("The response data of subscription is+++" ,response)
          return response.data
-
     }
-
     catch(error)
     {
        toast.error(error?.response?.data?.message)
     }
 })
 
-
-export const verifyUserPayment = cerateAsyncThunk("/payments/verify" , async(data)=>{
+export const verifyUserPayment = createAsyncThunk("/payments/verify" , async(data)=>{
 
     try
     {
-        const response = await axiosInstance.get("/payments/verify" , {
+        const response = await axiosInstance.post("/payments/verify" , {
             razorpay_payment_id: data.razorpay_payment_id,
             razorpay_subscription_id: data.razorpay_subscription_id,
             razorpay_signature: data.razorpay_signature
         })
 
-
          return response.data
-
     }
 
     catch(error)
@@ -70,8 +61,7 @@ export const verifyUserPayment = cerateAsyncThunk("/payments/verify" , async(dat
     }
 })
 
-
-export const getPaymentRecord = cerateAsyncThunk("/payments/record" , async()=>{
+export const getPaymentRecord = createAsyncThunk("/payments/record" , async()=>{
 
     try
     {
@@ -84,8 +74,6 @@ export const getPaymentRecord = cerateAsyncThunk("/payments/record" , async()=>{
                 },
                 error:"Failed to get payment record"
             })
-        
-
          return (await response).data
     }
 
@@ -96,11 +84,11 @@ export const getPaymentRecord = cerateAsyncThunk("/payments/record" , async()=>{
 })
 
 
-export const cancelCourseBundle = cerateAsyncThunk("/payments/cancel" , async()=>{
+export const cancelCourseBundle = createAsyncThunk("/payments/cancel" , async()=>{
 
     try
     {
-        const response = await axiosInstance.get("/payments/unsubscribe")
+        const response = await axiosInstance.post("/payments/unsubscribe")
             
             toast.promise(response, {
                 loading:"Unsubscribing the bundle",
@@ -120,18 +108,19 @@ export const cancelCourseBundle = cerateAsyncThunk("/payments/cancel" , async()=
 })
 
 
-
-
 const razorpaySlice = createSlice({
 
     name:"razorpay",
     initialState,
     reducers:{},
+
     extraReducers:(builder)=> {
 
         builder
         .addCase(getRazorpayId.fulfilled , (state , action)=>{
-            state.key = action?.payload?.key
+            // console.log("The action payload key is ",action?.payload?.message)
+            state.key = action?.payload?.message
+            
         })
 
           .addCase(purchaseCourseBundle.fulfilled , (state , action)=>{

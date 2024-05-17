@@ -63,7 +63,7 @@ function CourseDescription()
 Watch lectures
 </button>
 ):(
-    <button className="bg-yellow-500 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-600 transition-all ease-in-out duration-300 mt-8">
+    <button onClick={()=> navigate('/checkout')}  className="bg-yellow-500 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-600 transition-all ease-in-out duration-300 mt-8">
 Subscribe
     </button>
 

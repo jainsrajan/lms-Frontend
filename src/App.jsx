@@ -17,6 +17,8 @@ import Profile from './Pages/User/Profile'
 import Editprofile from './Pages/User/Editprofile'
 import DisplayLectures from './Pages/Dashbord/DisplayLectures'
 import Addlectures from './Pages/Dashbord/Addlectures'
+import Checkout from './Pages/Payment/Checkout'
+import CheckoutSuccess from './Pages/Payment/CheckoutSuccess'
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
       <Route path = '/user/profile' element={<Profile/>}/>
       <Route path = '/edit/profile' element={<Editprofile/>}/>
       <Route path='/course/displaylectures' element={<DisplayLectures/>} />
+      <Route path='/checkout' element={<Checkout/>} />
+      <Route path='/checkout/success' element={<CheckoutSuccess/>} />
       </Route>
 
 
