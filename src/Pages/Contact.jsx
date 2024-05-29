@@ -17,7 +17,7 @@ const[userInput , setUserInput] = useState({
 
 function handleInputChange(e)
 {
-    e.preventDefault()
+    
     
     const{name , value} = e.target
     
@@ -26,16 +26,17 @@ function handleInputChange(e)
         ...userInput,
         [name]:value
     })
-    console.log(userInput)
+    e.preventDefault()
+    // console.log(userInput)
 }
 
 async function onFormSubmit(e)
 {
     e.preventDefault()
 
-    if(!userInput.name || !userInput.email || userInput.message)
+    if(!userInput.name || !userInput.email || !userInput.message)
     {
-        toast.error("Kindky fill all the details")
+        toast.error("Kindly fill all the details")
         return;
     }
 
@@ -46,10 +47,12 @@ async function onFormSubmit(e)
     }
 
     try {
-        const response = axiosInstance.post("/contact" , userInput)
+        const response = axiosInstance.post("/contactus/contact" , userInput)
         toast.promise(response , {
          loading:"Submitting you message, Please wait",
-         success:"Form submitted successfully",
+         success:(data)=>{
+            return data?.data?.message
+         },
          error:"Failed to submmit the form"
         })
 
@@ -141,7 +144,7 @@ placeholder="Enter your message...." />
 
 <button type="submit" 
 onClick={onFormSubmit}
-className="w-full font-semibold text-lg  bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm p-2 mt-3">
+className="w-full font-semibold text-lg  bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-md p-2 mt-3">
 Submit
 </button>
 

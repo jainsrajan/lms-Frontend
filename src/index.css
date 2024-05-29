@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body{
+ body{
   margin: auto;
   max-width: 1440px;
   position: relative;
-} */
+  /* overflow-y: hidden; */
+  /* overflow: hidden; */
+} 

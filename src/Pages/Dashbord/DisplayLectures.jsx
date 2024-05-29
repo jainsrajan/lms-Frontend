@@ -11,7 +11,9 @@ function DisplayLectures()
     const dispatch = useDispatch()
 
     const {state} = useLocation()
+    // console.log("The display lecture state is" , state._id)
     const {lectures} = useSelector((state)=>state.lecture)
+    // console.log("The display lecture state is" , lectures._id)
     console.log("The lectures are as follows...",lectures)
     const {role} = useSelector((state)=>state.auth)
     const[currentVideo , setVideo] = useState(0)
@@ -31,8 +33,9 @@ function DisplayLectures()
    async  function onLectureDelete(courseid , lectureid)
 
     {
+         console.log("The ids are" , courseid , lectureid);
 
-        await dispatch(deleteCourseLectures({courseid:courseid , lectureid:lectureid}))
+        await dispatch(deleteCourseLectures({courseId:courseid , lectureId:lectureid}))
         await dispatch(getCourseLectures(state._id))
 
 
@@ -99,6 +102,7 @@ controlsList="nodownload"
 
     {
         lectures && lectures.map((lecture , idx)=>{
+            // console.log("The idx is" , idx)
             return(
                 <li className="space-y-2" key = {lecture._id}>
                    

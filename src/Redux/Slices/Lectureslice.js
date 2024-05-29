@@ -28,11 +28,14 @@ export const getCourseLectures = createAsyncThunk('/course/lecture/get' , async(
 export const addCourseLectures = createAsyncThunk('/course/lecture/add' , async(data)=>{
 
     try {
+        console.log("The add lecture slice data is"  , data)
         const formdata = new FormData()
 
         formdata.append("title" , data.title);
         formdata.append("description" , data.description) 
         formdata.append("lecture" , data.lecture)
+
+        console.log("The formdata is ",formdata)
         
         const response = axiosInstance.post(`/courses/${data.id}` , formdata)
         toast.promise(response , {
@@ -41,7 +44,7 @@ export const addCourseLectures = createAsyncThunk('/course/lecture/add' , async(
             error:"Failed to load lecture"
         })
 
-        // console.log("The response of the add lecture data is" , (await response).data)
+        console.log("The response of the add lecture data is" , (await response).data)
 
         return (await response).data
 
@@ -55,10 +58,10 @@ export const deleteCourseLectures = createAsyncThunk('/course/lecture/delete' , 
 
     try {
         
-        const response = axiosInstance.delete(`/courses?courseId=${data.courseId}&lectureId=${data.lectureId}`)
+        const response = axiosInstance.delete(`/courses/${data.courseId}/${data.lectureId}`)
 
         toast.promise(response , {
-            loading:"Fetching course lectures",
+            loading:"Deleting course lectures",
             success:"Lecture deleted successfully",
             error:"Failed to delete the lecture"
         })

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 // import Footer from "../Components/Footer"
 import HomeLayout from "../Layouts/HomeLayout"
 import { BsPersonCircle } from "react-icons/bs"
@@ -7,12 +7,16 @@ import { useDispatch } from "react-redux"
 import {toast} from 'react-hot-toast'
 import { createAccount } from "../Redux/Slices/authslice"
 import { IsEmail, IsvalidPassword } from "../Helpers/RegexMatcher"
+// import CountrySelector from "../Helpers/CountryList.js"
+import axios from "axios"
+
 
 function Signup()
 {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    
+    const[countries , setCountry] = useState([])
     const[previewImage , setPrevImage] = useState("")
 
     const [signupData , setsignupData] = useState({
@@ -20,7 +24,8 @@ function Signup()
         fullName:"",
         email:"",
         password:"",
-        avatar:""
+        avatar:"",
+        country:""
     })
 
     function handleUserInput(e)
@@ -63,12 +68,13 @@ function Signup()
     }
 
 
+
     async function createNewAccount(event)
     {
 
         event.preventDefault()
 
-        if(!signupData.fullName || !signupData.email || !signupData.password || !signupData.avatar)
+        if(!signupData.fullName || !signupData.email || !signupData.password || !signupData.avatar || !signupData.country)
 
         {
             toast.error("Please fill all the details")
@@ -91,7 +97,7 @@ if(!IsEmail(signupData.email))
 
 if(!IsvalidPassword(signupData.password))
 {
-     toast.error("Minimum eight characters, at least one letter, one number and one special character is required")
+     toast.error("Minimum eight characters, at least one capital letter and atleast one number is required")
 }
 
 const formdata = new FormData()
@@ -100,6 +106,7 @@ formdata.append("fullName" , signupData.fullName)
 formdata.append("email" , signupData.email)
 formdata.append("password" , signupData.password)
 formdata.append("avatar" , signupData.avatar)
+formdata.append("country" , signupData.country)
 
 
     //dispatch create account action......
@@ -117,12 +124,47 @@ formdata.append("avatar" , signupData.avatar)
     fullName:"",
     email:"",
     password:"",
-    avatar:""
+    avatar:"",
+    country:""
 })
 
 setPrevImage("")
 
     }
+
+    useEffect(()=>{
+
+         async function fetchData()
+         {
+
+            const response = await axios.get("https://countriesnow.space/api/v0.1/countries/iso")
+
+            let result = response.data.data
+  
+            let res = (result.map((element)=>{
+              return ({
+                  countryName:element.name,
+                  id:element.Iso2,
+                  id2:element.Iso3
+              })
+            }))
+  
+            setCountry(res)
+  
+           
+            countries.map((e)=>{
+              console.log(e.countryName , e.id)
+          })
+        }
+        fetchData()
+         
+      },[])
+  
+
+         
+
+         
+// console.log("The countries are ",countries);
 
     return (
 
@@ -216,6 +258,36 @@ value={signupData.fullName}
     />
 
  </div>
+
+
+{/* Selecting the Country........... */}
+
+<label htmlFor="country" className="font-semibold flex flex-col gap-1">Country
+
+<div className="flex flex-col">
+
+<select className="bg-transparent  border text-white" onChange={handleUserInput} id="country" name="country">
+
+    <option >Select Country</option>
+   
+    {countries.map(country=>(
+             <option key={country.id} value={country.countryName} className="text-black">
+{country.countryName}
+
+             </option>
+          ))}
+
+   
+    </select>
+
+
+</div>
+
+
+    </label>
+
+
+
 
  <button type="submit" className="font-semibold bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-400 rounded-md py-2 cursor-pointer  text-lg mt-4">Create Account</button>
 

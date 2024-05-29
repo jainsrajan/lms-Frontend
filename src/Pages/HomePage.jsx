@@ -40,7 +40,7 @@ Explor Courses
 
     <Link to="/contact">
 
-<button className="border border-yellow-500 px-4 py-2 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-3000">
+<button className="border border-yellow-500 px-4 py-2 rounded-md font-semibold text-lg text-white cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-3000">
 Contact Us
 </button>
 

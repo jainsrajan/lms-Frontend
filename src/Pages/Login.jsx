@@ -30,7 +30,7 @@ function Login()
             [name]:value
         })
         e.preventDefault()
-        console.log("name*****" , name)
+        // console.log("name*****" , name)
     }
 
     async function Onlogin(event)
@@ -97,7 +97,7 @@ console.log("srajan")
 {/* Passowrd........... */}
  <div className="flex flex-col gap-1">
 
-    <label htmlFor="email" className="font-semibold">Password</label>
+    <label htmlFor="password" className="font-semibold">Password</label>
 
     <input
 
@@ -114,7 +114,12 @@ console.log("srajan")
 
  <button type="submit" className="font-semibold bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-400 rounded-md py-2 cursor-pointer  text-lg mt-4">Login</button>
 
- <p  className="text-center">Don't have an account?<Link to='/signup'><span className="link font-semibold text-accent">Signup</span></Link></p>
+ <p  className="text-center">Don't have an account?<Link to='/signup'><span className="link font-semibold text-accent"> Signup</span></Link></p>
+
+ <p  className="text-center"><Link to='/forgotpassword'><span className="link font-semibold text-accent"> Forgot Password?</span></Link></p>
+
+ 
+ 
 
     </form>
 </div>

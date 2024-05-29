@@ -87,7 +87,7 @@ return(
     <HomeLayout>
 
 <form onSubmit={handleSubscription}
-className="min-h-[90vh] flex items-center justify-center text-white">
+className=" min-h-screen flex items-center justify-center text-white">
 
     <div className="w-80 h-[26rem] flex flex-col justify-center shadow-[0_0_10px_black] rounded-lg relative">
 
@@ -119,8 +119,8 @@ className="min-h-[90vh] flex items-center justify-center text-white">
 <p>* Terms and conditions applied *</p>
 </div>
 
-<button type="submit" >
-    click on me
+<button type="submit" className= "font-semibold bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-400 rounded-md py-2 px-14 cursor-pointer text-lg mt-4" >
+    Click to Checkout
 </button>
 
 </div>

@@ -45,7 +45,7 @@ async function handleLogout(e)
 
     return (
 
-        <div className="min-h-screen bg-gray-900">
+        <div className="h-fit bg-gray-900 overflow-y-hidden">
         <div className="drawer absolute left-0 z-50 w-fit">
 
 <input className="drawer-toggle"  id="my-drawer" type="checkbox"/>
@@ -90,13 +90,13 @@ async function handleLogout(e)
           <Link to='/' >Home</Link>
         </li>
 
-{isLoggedIn && role === 'ADMIN' &&(
+{/* {isLoggedIn && role === 'ADMIN' &&(
            <li>
 
 <Link to = "/admin/dashboard" >Admin Dasboard</Link>
 
            </li>
-)}
+)} */}
 
 {isLoggedIn && role === 'ADMIN' &&(
            <li>
@@ -142,16 +142,16 @@ async function handleLogout(e)
 
 
 {isLoggedIn && (
-    <li className= ' bottom-4 mr-[35%]  '>
+    <li className= ' absolute bottom-3 mr-[35%]  '>
     <div className='w-fit flex items-center justify-center'>
     
-    <button className='btn btn-sm btn-primary font-bold rounded-md w-50%'> 
+    <button className='btn px-10  btn-primary font-bold rounded-md w-50%'> 
     
     <Link to = '/user/profile'>Profile</Link>
     
     </button>
 
-    <button className='btn btn-sm   btn-secondary font-bold rounded-md w-50%'> 
+    <button className='btn px-10 btn-secondary font-bold rounded-md w-50%'> 
     
     <Link onClick = {handleLogout}>Logout</Link>
     
