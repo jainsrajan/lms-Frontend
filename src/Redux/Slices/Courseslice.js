@@ -10,7 +10,7 @@ export const getAllcourses = createAsyncThunk("/courses/get" , async()=>{
 
             try {
 
-                const response = axiosInstance.get("/courses")
+                const response = axiosInstance.get("lms-backend-gules.vercel.app/courses")
                 toast.promise(response , {
                     loading:"Loading course data...",
                     success:"Courses loaded successfully",
