@@ -9,7 +9,7 @@ const initialState = {
     data:localStorage.getItem("data")!==undefined  ? JSON.parse(localStorage.getItem('data')) : {}
 }
 
-export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
+export const createAccount = createAsyncThunk("https://lms-backend-1-88g4.onrender.com/auth/signup" , async(data)=>{
     try {
 
             const res = axiosInstance.post("user/register" , data)
@@ -37,7 +37,7 @@ export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
 // Login account slic......................
 
 
-export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
+export const loginAccount = createAsyncThunk("https://lms-backend-1-88g4.onrender.com/auth/login" , async(data)=>{
     try {
 
             const res = axiosInstance.post("user/login" , data)
@@ -63,7 +63,7 @@ export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
     }
 })
 
-export const logout = createAsyncThunk("/auth/logout" , async()=>{
+export const logout = createAsyncThunk("https://lms-backend-1-88g4.onrender.com/auth/logout" , async()=>{
     try {
 
         const res = axiosInstance.get("user/logout")
