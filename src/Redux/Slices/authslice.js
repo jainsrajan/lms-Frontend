@@ -12,7 +12,7 @@ const initialState = {
 export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
     try {
 
-            const res = axiosInstance.post("https://lms-backend-iigg.onrender.com/user/register" , data)
+            const res = axiosInstance.post("/user/register" , data)
         
             toast.promise(res , {
                 loading:"Wait, creating your account",
@@ -40,7 +40,7 @@ export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
 export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
     try {
 
-            const res = axiosInstance.post("https://lms-backend-iigg.onrender.com/user/login" , data)
+            const res = axiosInstance.post("https://lms-backend-5p1e.onrender.com/user/login" , data)
           console.log("first response" , res)
             toast.promise(res , {
                 loading:"Wait! authentication is in progress....",
@@ -63,7 +63,7 @@ export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
 export const logout = createAsyncThunk("/auth/logout" , async()=>{
     try {
 
-        const res = axiosInstance.get("https://lms-backend-iigg.onrender.com/user/logout")
+        const res = axiosInstance.get("https://lms-backend-5p1e.onrender.com/user/logout")
           
         toast.promise(res , {
             loading:"Wait! logging out is in progress....",
