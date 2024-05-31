@@ -6,7 +6,7 @@ const initialState = {
     courseData:[]
 }
 
-export const getAllcourses = createAsyncThunk("/courses/get" , async()=>{
+export const getAllcourses = createAsyncThunk("https://lms-backend-1-88g4.onrender.com/courses/get" , async()=>{
 
             try {
 
