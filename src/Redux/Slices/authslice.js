@@ -44,7 +44,7 @@ export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
           console.log("first response" , res)
             toast.promise(res , {
                 loading:"Wait! authentication is in progress....",
-                success:"Logged in Suucessfully,
+                success:"Logged in Suucessfully",
                 error:"Failed to login account"
             },
             );
