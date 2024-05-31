@@ -10,7 +10,7 @@ export const getAllcourses = createAsyncThunk("/courses/get" , async()=>{
 
             try {
 
-                const response = axiosInstance.get("https://lms-backend-iigg.onrender.com/courses")
+                const response = axiosInstance.get("https://lms-backend-5p1e.onrender.com/courses")
                 toast.promise(response , {
                     loading:"Loading course data...",
                     success:"Courses loaded successfully",
