@@ -6,11 +6,11 @@ const initialState = {
     courseData:[]
 }
 
-export const getAllcourses = createAsyncThunk("https://lms-backend-1-88g4.onrender.com/courses/get" , async()=>{
+export const getAllcourses = createAsyncThunk("/courses/get" , async()=>{
 
             try {
 
-                const response = axiosInstance.get("/courses")
+                const response = axiosInstance.get("https://lms-backend-1-88g4.onrender.com/courses")
                 toast.promise(response , {
                     loading:"Loading course data...",
                     success:"Courses loaded successfully",
