@@ -42,7 +42,7 @@ function App() {
       <Route path='/contact' element={<Contact/>}></Route>
       <Route path='/denied' element={<Denied/>}></Route>
       <Route path='/forgotpassword' element={<Forgotpassword/>}></Route>
-      <Route path='/reset-password/:resetToken' element={<Resetpassword/>}></Route>
+      <Route path='https://bucolic-mooncake-057a17.netlify.app/reset-password/:resetToken' element={<Resetpassword/>}></Route>
 
       <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>}>
 
