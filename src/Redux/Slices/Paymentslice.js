@@ -33,8 +33,9 @@ export const purchaseCourseBundle = createAsyncThunk("/purchaceCourse" , async()
     try
     {
         const response = await axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/payments/subscribe")
-        // console.log("The response data of subscription is+++" ,response)
+        console.log("The response data of subscription is+++" ,response.data)
          return response.data
+        
     }
     catch(error)
     {
