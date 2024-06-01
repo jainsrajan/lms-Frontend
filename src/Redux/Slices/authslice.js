@@ -12,7 +12,7 @@ const initialState = {
 export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
     try {
 
-            const res = axiosInstance.post("/user/register" , data)
+            const res = axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/user/register" , data)
         
             toast.promise(res , {
                 loading:"Wait, creating your account",
@@ -40,7 +40,7 @@ export const createAccount = createAsyncThunk("/auth/signup" , async(data)=>{
 export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
     try {
 
-            const res = axiosInstance.post("https://lms-backend-lty4.onrender.com/user/login" , data)
+            const res = axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/user/login" , data)
           console.log("first response" , res)
             toast.promise(res , {
                 loading:"Wait! authentication is in progress....",
@@ -63,7 +63,7 @@ export const loginAccount = createAsyncThunk("/auth/login" , async(data)=>{
 export const logout = createAsyncThunk("/auth/logout" , async()=>{
     try {
 
-        const res = axiosInstance.get("https://lms-backend-lty4.onrender.com/user/logout")
+        const res = axiosInstance.get("https://lms-backend-lty4.onrender.com/api/v1/user/logout")
           
         toast.promise(res , {
             loading:"Wait! logging out is in progress....",
@@ -86,7 +86,7 @@ export const updateprofile = createAsyncThunk("/user/update/profile" , async(dat
     try {
         // console.log("id is" , id)
 
-        const res = axiosInstance.put(`/user/update/${data[0]}` , data[1])
+        const res = axiosInstance.put(`https://lms-backend-lty4.onrender.com/api/v1/user/update/${data[0]}` , data[1])
           
         toast.promise(res , {
             loading:"Wait! profile update is in progress....",
@@ -110,7 +110,7 @@ export const changepassword = createAsyncThunk("/user/changepassword" , async(da
     try {
         console.log("The data is" ,data )
 
-        const res = axiosInstance.post('/user/changepassword' , data)
+        const res = axiosInstance.post('https://lms-backend-lty4.onrender.com/api/v1/user/changepassword' , data)
           console.log("The changepassword response is " , res)
         toast.promise(res , {
             loading:"Wait! passowrd is updating.....",
@@ -136,7 +136,7 @@ export const forgotpassword = createAsyncThunk("/user/forgotpassword" , async(da
     try {
         // console.log("The data is" ,data )
 
-        const res = axiosInstance.post('/user/reset' , data)
+        const res = axiosInstance.post('https://lms-backend-lty4.onrender.com/api/v1/user/reset' , data)
    
         toast.promise(res , {
             loading:"Wait! Verification email is sending.....",
@@ -164,7 +164,7 @@ export const resetpassword = createAsyncThunk("/user/resetpassword" , async(data
         // console.log("The resetpassword data is" , data )
         console.log("The password and token are as follows ",data.userpassword.token , data.userpassword.password)
 
-        const res = axiosInstance.post(`/user/reset-password/${data.userpassword.token}` , data.userpassword)
+        const res = axiosInstance.post(`https://lms-backend-lty4.onrender.com/api/v1/user/reset-password/${data.userpassword.token}` , data.userpassword)
    
         toast.promise(res , {
             loading:"Wait! Reseting your password.....",
@@ -190,7 +190,7 @@ export const resetpassword = createAsyncThunk("/user/resetpassword" , async(data
 export const getUserData = createAsyncThunk("/user/details" , async()=>{
     try {
 
-        const res = axiosInstance.get("https://lms-backend-1-88g4.onrender.com/user/me")
+        const res = axiosInstance.get("https://lms-backend-lty4.onrender.com/api/v1/user/me")
 
         console.log("getuserdata is " , (await res).data)
         return  (await res).data
