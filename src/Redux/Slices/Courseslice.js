@@ -58,7 +58,7 @@ export const createNewCourse = createAsyncThunk('/course/create' , async(data)=>
         formData.append("createdBy" , data?.createdBy)
         formData.append("thumbnail" , data?.thumbnail)
 
-        const response = axiosInstance.post("/courses" ,formData )
+        const response = axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/courses" ,formData )
         toast.promise(response,{
             loading:"Creating new course",
             success:"Course created Successfully",
