@@ -16,7 +16,7 @@ export const getRazorpayId = createAsyncThunk("/razorpay/getId" , async()=>{
 
     try
     {
-        const response =  await axiosInstance.get("/payments/razorpay-key")
+        const response =  await axiosInstance.get("https://lms-backend-lty4.onrender.com/api/v1/payments/razorpay-key")
         //  console.log("The getrazorpayAPI data is----- ",response.data)
          return  response.data
     }
@@ -32,7 +32,7 @@ export const purchaseCourseBundle = createAsyncThunk("/purchaceCourse" , async()
 
     try
     {
-        const response = await axiosInstance.post("/payments/subscribe")
+        const response = await axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/payments/subscribe")
         // console.log("The response data of subscription is+++" ,response)
          return response.data
     }
@@ -46,7 +46,7 @@ export const verifyUserPayment = createAsyncThunk("/payments/verify" , async(dat
 
     try
     {
-        const response = await axiosInstance.post("/payments/verify" , {
+        const response = await axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/payments/verify" , {
             razorpay_payment_id: data.razorpay_payment_id,
             razorpay_subscription_id: data.razorpay_subscription_id,
             razorpay_signature: data.razorpay_signature
@@ -88,7 +88,7 @@ export const cancelCourseBundle = createAsyncThunk("/payments/cancel" , async()=
 
     try
     {
-        const response =  axiosInstance.post("/payments/unsubscribe")
+        const response =  axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/payments/unsubscribe")
             console.log("the unsubscribe response is" , response)
             toast.promise(response, {
                 loading:"Unsubscribing the bundle",
