@@ -52,7 +52,7 @@ function DisplayLectures()
         Course Name: {state?.title}
     </div>
 
-   {lectures && lectures.length>0&& <div className="flex justify-center gap-10 w-fill">
+    <div className="flex justify-center gap-10 w-fill">
 
         {/* left-section.............. */}
 <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]"> 
@@ -127,7 +127,7 @@ controlsList="nodownload"
     }
 </ul>
 
-    </div>}
+    </div>
 
 </div>
 <Footer/>
