@@ -47,7 +47,7 @@ async function onFormSubmit(e)
     }
 
     try {
-        const response = axiosInstance.post("/contactus/contact" , userInput)
+        const response = axiosInstance.post("https://lms-backend-lty4.onrender.com/api/v1/contactus/contact" , userInput)
         toast.promise(response , {
          loading:"Submitting you message, Please wait",
          success:(data)=>{
