@@ -254,8 +254,11 @@ value={signupData.fullName}
     className="bg-transparent px-2  border"
     onChange={handleUserInput}
     value={signupData.password}
-    
     />
+
+      <p className="text-gray-400 text-xs">Minimum eight characters, at least one uppercase letter and atleast one number is required.</p>
+    <p className="text-gray-400 text-xs">Kindly avoid use of <span className="text-yellow-500">special characters.</span>
+    </p>
 
  </div>
 
