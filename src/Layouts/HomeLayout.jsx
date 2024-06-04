@@ -143,7 +143,7 @@ async function handleLogout(e)
 
 {isLoggedIn && (
     <li className= ' absolute bottom-3 mr-[35%]  '>
-    <div className='w-fit flex items-center justify-center xs:flex flex-col'>
+    <div className='w-fit flex items-center justify-center xs: flex-col'>
     
     <button className='btn px-10  btn-primary font-bold rounded-md w-50% xs:px-6'> 
     
