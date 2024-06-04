@@ -121,15 +121,15 @@ async function handleLogout(e)
 
 {!isLoggedIn && (
     <li className = 'absolute bottom-3 mr-[35%]  '>
-    <div className = 'flex items-center justify-center'>
+    <div className = 'flex items-center justify-center xs:flex-col'>
     
-    <button className='btn px-10 btn-primary font-bold rounded-md '> 
+    <button className='btn px-10 btn-primary font-bold rounded-md xs:px-6'> 
     
     <Link to = '/login'>Login</Link>
     
     </button>
 
-    <button className='btn px-10  btn-secondary font-bold rounded-md '> 
+    <button className='btn px-10  btn-secondary font-bold rounded-md xs:px-6'> 
     
     <Link to = '/Signup'>Signup</Link>
     
@@ -143,15 +143,15 @@ async function handleLogout(e)
 
 {isLoggedIn && (
     <li className= ' absolute bottom-3 mr-[35%]  '>
-    <div className='w-fit flex items-center justify-center'>
+    <div className='w-fit flex items-center justify-center xs:flex flex-col'>
     
-    <button className='btn px-10  btn-primary font-bold rounded-md w-50%'> 
+    <button className='btn px-10  btn-primary font-bold rounded-md w-50% xs:px-6'> 
     
     <Link to = '/user/profile'>Profile</Link>
     
     </button>
 
-    <button className='btn px-10 btn-secondary font-bold rounded-md w-50%'> 
+    <button className='btn px-10 btn-secondary font-bold rounded-md w-50% xs:px-6'> 
     
     <Link onClick = {handleLogout}>Logout</Link>
     
