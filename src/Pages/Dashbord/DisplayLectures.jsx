@@ -55,11 +55,11 @@ function DisplayLectures()
     <div className="flex justify-center gap-10 w-fill  xs:flex-col ">
 
         {/* left-section.............. */}
-<div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]"> 
+<div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] xs:w-[20rem] ml-6"> 
 
 <video 
 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
-className="object-fill rounded-tl-lg rounded-tr-lg w-full xs: xs:w-[20rem] ml-6"
+className="object-fill rounded-tl-lg rounded-tr-lg w-full"
 controls
 disablePictureInPicture
 muted
