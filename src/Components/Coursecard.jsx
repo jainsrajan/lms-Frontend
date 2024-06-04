@@ -9,7 +9,7 @@ function Coursecard({data})
     
                <div 
                onClick={()=>navigate('/course/description' , {state:{...data}})}
-               className="text-white w-[22rem] h-[400px] shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-zinc-700 xs:w-[15rem] mr-16 flex items-center justify-center md:w-[20rem]">
+               className="text-white w-[22rem] h-[400px] shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-zinc-700 xs:w-[15rem]  flex items-center justify-center md:w-[20rem]">
 
               <div className="overflow-hidden">
 
