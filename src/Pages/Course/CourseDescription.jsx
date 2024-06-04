@@ -7,7 +7,7 @@ function CourseDescription()
 {
 
     const {state} = useLocation()
-    const {role , data} = useSelector((state)=> state?.auth)
+    const {role , data , isLoggedIn} = useSelector((state)=> state?.auth)
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -63,7 +63,7 @@ function CourseDescription()
 Watch lectures
 </button>
 ):(
-    <button onClick={()=> navigate('/checkout')}  className="bg-yellow-500 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-600 transition-all ease-in-out duration-300 mt-8">
+    <button onClick={()=>  isLoggedIn ? navigate('/checkout') : navigate("/login")}  className="bg-yellow-500 text-xl rounded-md font-bold px-5 py-3 w-full hover:bg-yellow-600 transition-all ease-in-out duration-300 mt-8">
 Subscribe
     </button>
 
