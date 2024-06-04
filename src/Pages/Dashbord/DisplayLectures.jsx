@@ -52,7 +52,7 @@ function DisplayLectures()
         Course Name: {state?.title}
     </div>
 
-    <div className="flex justify-center gap-10 w-fill">
+    <div className="flex justify-center gap-10 w-fill  xs:flex-col ">
 
         {/* left-section.............. */}
 <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]"> 
@@ -67,7 +67,7 @@ controlsList="nodownload"
 
 ></video>
 
-<div>
+<div className ="xs:text-center">
     <h1>
         <span>
             {lectures && lectures[currentVideo]?.title}
@@ -88,7 +88,7 @@ controlsList="nodownload"
 
 {/* Right Section */}
 
-<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
+<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4 xs:text-start ml-16">
     <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
 
         <p>Lectures list</p>
