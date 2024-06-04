@@ -55,7 +55,7 @@ function DisplayLectures()
     <div className="flex justify-center gap-10 w-fill  xs:flex-col ">
 
         {/* left-section.............. */}
-<div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] xs:w-[20rem] ml-6"> 
+<div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] xs:w-[20rem]"> 
 
 <video 
 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
@@ -88,7 +88,7 @@ controlsList="nodownload"
 
 {/* Right Section */}
 
-<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4 xs:w-[20rem] ml-6">
+<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4 xs:w-[20rem] ">
     <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between xs:w-[20rem]">
 
         <p>Lectures list</p>
