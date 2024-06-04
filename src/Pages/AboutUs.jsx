@@ -11,14 +11,14 @@ function AboutUs()
         
 <div  className="pl-20 pt-20  text-white">
 
-    <div className=" flex items-center flex-row gap-10">
+    <div className=" flex items-center flex-row gap-10  xs:flex-col mr-10">
         
-        <section className="w-1/2 space-y-10">
+        <section className="w-1/2 space-y-10 xs:w-full">
             <h1 className="text-5xl text-yellow-500 font-bold">
                 Affordal and quality section
             </h1>
 
-            <p className="text-xl text-gray-200" >Our goal is to provide the affordabel and quality education to the world.
+            <p className="text-xl text-gray-200 xs:mt-5" >Our goal is to provide the affordabel and quality education to the world.
             We are providing the platform for thr aspiring teachers and students to share 
             theis skills, creativity and Knowledge to each other to empower and contribute in the growth and welness of mankid.
             </p>
@@ -41,7 +41,7 @@ alt="aboutus" />
 
     </div>
 
-<div className="carousel  w-[50%] m-auto relative inset-x-64 mt-20 ">
+<div className="carousel  w-[50%] m-auto relative inset-x-64 mt-20 xs:hidden">
     {celebrities && celebrities.map(celebrity=>(<CarouselSLide 
     {...celebrity}
     key= {celebrity.slideNumber} 
