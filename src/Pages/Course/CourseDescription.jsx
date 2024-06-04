@@ -20,7 +20,7 @@ function CourseDescription()
 
 <div className="min-h-[100vh] pt-12 px-20 flex flex-col items-center justify-center text-white">
 
-<div className="grid grid-cols-2 gap-4 relative">
+<div className="grid grid-cols-2 gap-4 relative xs:flex flex-col items-center">
 
     <div className="space-y-3">
 
