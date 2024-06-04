@@ -59,7 +59,7 @@ function DisplayLectures()
 
 <video 
 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
-className="object-fill rounded-tl-lg rounded-tr-lg w-full"
+className="object-fill rounded-tl-lg rounded-tr-lg w-full xs:ml-16"
 controls
 disablePictureInPicture
 muted
