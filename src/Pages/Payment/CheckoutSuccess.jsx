@@ -18,7 +18,7 @@ import { useEffect } from "react";
     return (
 
         <HomeLayout>
-             <div className="min-h-[90vh] flex items-center justify-center text-white">
+             <div className="min-h-[100vh] flex items-center justify-center text-white">
 
                 <div className="w-80 h-[26rem] flex flex-col justify-center items-center shadow-[0_0_10px_black] rounded-lg relative">
 
