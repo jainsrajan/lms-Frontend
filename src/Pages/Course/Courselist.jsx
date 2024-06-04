@@ -26,11 +26,11 @@ return(
 
 
 <HomeLayout>
-<div className="min-h-[90vh] pt-12 pl-20 flex flex-col gap-10 text-white">
+<div className="min-h-[100vh] pt-12 pl-20 flex flex-col gap-10 text-white xs:flex items-center justify-center">
 
 
-<h1 className="text-center text-3xl font-semibold mt-5">Explore the courses made by
-    <span className="font-bold text-yellow-500">
+<h1 className="text-center text-3xl font-semibold mt-5 xs:text-center mr-16">Explore the courses made by
+    <span className="font-bold text-yellow-500 xs:text-center">
         Industry Experts
     </span>
     </h1>
