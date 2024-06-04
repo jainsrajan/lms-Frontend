@@ -59,7 +59,7 @@ function DisplayLectures()
 
 <video 
 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
-className="object-fill rounded-tl-lg rounded-tr-lg w-full xs:ml-16"
+className="object-fill rounded-tl-lg rounded-tr-lg w-full xs: xs:w-[20rem] ml-6"
 controls
 disablePictureInPicture
 muted
@@ -88,8 +88,8 @@ controlsList="nodownload"
 
 {/* Right Section */}
 
-<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4 xs:text-start ml-16">
-    <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
+<ul className="w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4 xs:w-[20rem] ml-6">
+    <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between xs:w-[20rem]">
 
         <p>Lectures list</p>
         
